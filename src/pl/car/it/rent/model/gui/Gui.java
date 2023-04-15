@@ -1,6 +1,6 @@
 package pl.car.it.rent.model.gui;
 
-
+import Pojazdy.Vehicle;
 import pl.car.it.rent.model.Bus;
 import pl.car.it.rent.model.Car;
 
@@ -27,16 +27,12 @@ public class Gui {
         return scanner.nextLine();
     }
 
-    public void listCars(Car[] cars) {
-        for (Car car : cars) {
-            if (!car.isRent()) {
-
-                System.out.println(new StringBuilder().append(car.getBrand()).append(" ").append(car.getModel())
-                        .append(" ").append(car.getPrice()).append(" ").append(car.getYear()).append(" ")
-                        .append(car.getPlate()).toString());
-            }
+    public void listVehicles(Vehicle[] vehicles) {
+        for(Vehicle vehicle : vehicles) {
+            System.out.println(vehicle);
         }
     }
+
 
     public String readPlate() {
         System.out.println("Podaj tablice auta, ktore chcesz wyporzyczyc:");
@@ -52,15 +48,5 @@ public class Gui {
         }
     }
 
-    public void listBusses(Bus[] buses) {
-        for (Bus bus : buses) {
-            if (!bus.isRent()) {
 
-                System.out.println(new StringBuilder().append(bus.getBrand()).append(" ").append(bus.getModel())
-                        .append(" ").append(bus.getPrice()).append(" ").append(bus.getYear()).append(" ")
-                        .append(bus.getPlate()).append(" ").append(bus.getSeats()).append(" ")
-                        .append(bus.isTicketMachine()));
-            }
-        }
-    }
 }

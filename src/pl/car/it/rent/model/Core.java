@@ -2,13 +2,16 @@ package pl.car.it.rent.model;
 
 import pl.car.it.rent.model.db.BussRepository;
 import pl.car.it.rent.model.db.CarRepository;
+import pl.car.it.rent.model.db.VehicleRepository;
 import pl.car.it.rent.model.gui.Gui;
 
 public class Core {
 
-    BussRepository bussesDB = new BussRepository();
+    //BussRepository bussesDB = new BussRepository();
 
-    CarRepository baza = new CarRepository();
+    //CarRepository baza = new CarRepository();
+
+    VehicleRepository database = new VehicleRepository();
 
     Gui gui = new Gui();
 
@@ -25,32 +28,30 @@ public class Core {
                 case "1":
                     System.out.println("Oto lista aut");
 
-                    gui.listCars(baza.getCars());
-                    System.out.println("\n");
-                    gui.listBusses(bussesDB.getBusses());
+                    gui.listVehicles(database.getVehicles());
                     break;
 
                 case "2":
 
-                    plate = gui.readPlate();
+                   // plate = gui.readPlate();
 
-                    carSucces = baza.rentCar(plate);
+                    //carSucces = baza.rentCar(plate);
 
-                    bussSucces = bussesDB.rentBus(plate);
+                    //bussSucces = bussesDB.rentBus(plate);
 
-                    gui.rentResult(carSucces || bussSucces);
+                    gui.rentResult(database.rentVehicle(gui.readPlate()));
 
                     break;
 
                 case "3":
 
-                    plate = gui.readPlate();
+                    //plate = gui.readPlate();
 
-                    carSucces = baza.returnCar(plate);
+                    //carSucces = baza.returnCar(plate);
 
-                    bussSucces = bussesDB.returnBus(plate);
+                    //bussSucces = bussesDB.returnBus(plate);
 
-                    gui.rentResult(carSucces || bussSucces);
+                    gui.rentResult(database.returnVehicle(gui.readPlate()));
 
                     break;
 
