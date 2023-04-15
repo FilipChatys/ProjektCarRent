@@ -52,5 +52,5 @@ public class VehicleRepository {
         public Vehicle[] getVehicles() {
             return vehicles;
         }
-    }
 }
+
