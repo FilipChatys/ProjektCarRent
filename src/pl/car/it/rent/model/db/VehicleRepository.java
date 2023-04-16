@@ -2,10 +2,12 @@ package pl.car.it.rent.model.db;
 import Pojazdy.Vehicle;
 import pl.car.it.rent.model.Bus;
 import pl.car.it.rent.model.Car;
+import pl.car.it.rent.model.Motorcycle;
+
 
 public class VehicleRepository {
 
-        private Vehicle[] vehicles = new Vehicle[8];
+        private Vehicle[] vehicles = new Vehicle[10];
 
         public VehicleRepository() {
             this.vehicles[0] = new Car("BMW", "3", 2015,
@@ -27,6 +29,10 @@ public class VehicleRepository {
             this.vehicles[7] = new Bus("Volvo", "GTR",
                     2006, 650.0, "KR333", 45,
                     true);
+            this.vehicles[8] = new Motorcycle("Jamaha", "C1",
+                    2006, 650.0, "KR444");
+            this.vehicles[9] = new Motorcycle("Suzuki", "S4",
+                    2006, 650.0, "KR555");
         }
 
         public boolean rentVehicle(String plate) {

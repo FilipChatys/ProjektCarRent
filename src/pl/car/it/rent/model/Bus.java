@@ -30,4 +30,19 @@ public class Bus extends Vehicle {
     public void setTicketMachine(boolean ticketMachine) {
         this.ticketMachine = ticketMachine;
     }
+
+    @Override
+    public String toString(){
+        String vehiclePart = super.toString();
+        StringBuilder sb = new StringBuilder();
+        sb.append(vehiclePart)
+                //.append(this.getClass().getSimpleName())
+                .append(" Ilość miejsc siedzących: ")
+                .append(this.seats)
+                .append(" Biletomat: ")
+                .append(this.ticketMachine ? "Tak" : " Nie");
+
+        return sb.toString();
+    }
+
 }

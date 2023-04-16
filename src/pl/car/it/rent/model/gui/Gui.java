@@ -48,5 +48,10 @@ public class Gui {
         }
     }
 
-
+    public User readLoginAndPassword(){
+        System.out.println("Login:");
+        String login = scanner.nextLine();
+        System.out.println("Password:");
+        return new User(login, scanner.nextLine());
+    }
 }
